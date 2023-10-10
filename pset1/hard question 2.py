@@ -2,7 +2,7 @@ def wind_chill(temp, speed):
      wind_chill = 35.74 + (0.6215*temp) - (35.75 * (speed**0.16)) + (0.4275*(temp)*(speed**0.16))
      print(wind_chill)
 
-air_temp = input("What is the air temperature? \n")
+air_temp = input("What is the air temperature (fahrenheit)? \n")
 wind_speed = input("What is the wind speed? \n")
 
 try:
