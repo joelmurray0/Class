@@ -1,5 +1,3 @@
-
-
 def prime_factorise(x: int):
      factors = [1]
      n = 2
