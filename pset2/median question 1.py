@@ -8,7 +8,6 @@ NOISE_LEVELS = {
 def compare_noise(decibel, NOISE_LEVELS):
      temp = NOISE_LEVELS
      temp["value"] = decibel
-
      temp = dict(sorted(temp.items(), key = lambda x: x[1]))
 
      for i, v in enumerate(temp.keys()):
@@ -21,10 +20,7 @@ def compare_noise(decibel, NOISE_LEVELS):
           print("This sound is louder than the rest of the table.")
      else:
           z = list(temp.keys())
-
           print(f"This sound is in between the {z[pos-1]} and the {z[pos+1]}")
-
-     
 
 decibel = input("Enter a decibel value. \n")
 

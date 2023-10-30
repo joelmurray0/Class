@@ -11,7 +11,6 @@ ELECTROMAGNETIC_SPECTRUM = {
 def range(frequency):
      temp = ELECTROMAGNETIC_SPECTRUM
      temp["value"] = frequency
-
      temp = dict(sorted(temp.items(), key = lambda x: x[1]))
 
      for i, v in enumerate(temp.keys()):
