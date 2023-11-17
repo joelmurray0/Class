@@ -30,11 +30,8 @@ MONTHS = {
 
 def birthday_index(month, day):
      month = MONTHS[month][0]
-
      x = list(MONTHS.keys())
-     
      i, v = MONTHS[x[month-1]]
-
      sum = 10
      
      for j in range(1,i):
@@ -49,8 +46,6 @@ def position(birth_number):
      if birth_number == 0:
           birth_number = 365
      temp["value"] = birth_number
-
-
      temp = dict(sorted(temp.items(), key = lambda x: x[1]))
 
      for i, v in enumerate(temp.keys()):
