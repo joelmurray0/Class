@@ -1,7 +1,5 @@
-import math
-
 def decrypt(text, key):
-     height = math.floor(len(text)/key)
+     height = len(text)//key
      output = ""
      left_str = ""
      for i in range(height):
