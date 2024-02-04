@@ -9,9 +9,12 @@ class Pet():
      def stop_running(self):
           print("Pet stopped")
 
-dog = Pet("dog", 4)
+def main():
+     dog = Pet("dog", 4)
+     monkey = Pet("monkey", 2)
 
-monkey = Pet("monkey", 2)
+     dog.start_running()
+     monkey.stop_running()
 
-dog.start_running()
-monkey.stop_running()
+if __name__ == "__main__":
+     main()

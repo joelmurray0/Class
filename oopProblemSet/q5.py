@@ -1,8 +1,8 @@
 class Box:
      def __init__(self, width, length, height):
-          self.width = width
-          self.length = length
-          self.height = height
+          self._width = width
+          self._length = length
+          self._height = height
 
      @property
      def width(self):
@@ -18,7 +18,7 @@ class Box:
      def length(self):
           return self._length
      
-     @width.setter
+     @length.setter
      def length(self, length):
           if length <= 0:
                raise ValueError("Enter a valid length")
@@ -27,7 +27,7 @@ class Box:
      @property
      def height(self):
           return self._height
-     
+
      @height.setter
      def height(self, height):
           if height <= 0:
@@ -40,12 +40,14 @@ class Box:
      def display_dimensions(self):
           print(f"{self._width}x{self._length}x{self._height}")
 
+def main():
+     width = int(input("enter width"))
+     length = int(input("enter length"))
+     height = int(input("enter height"))
 
+     box = Box(width, length, height)
+     box.display_volume()
+     box.display_dimensions()
 
-width = int(input("enter width"))
-length = int(input("enter length"))
-height = int(input("enter height"))
-
-box = Box(width, length, height)
-box.display_volume()
-box.display_dimensions()
+if __name__ == "__main__":
+     main()

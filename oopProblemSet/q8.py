@@ -5,10 +5,27 @@ def display_menu():
 
 class Circle:
      def __init__(self, radius):
-          self._radius = set_radius
+          self._radius = radius
+          self._diameter = radius*2
+          self._perimeter = radius*2*math.pi
+          self._area = radius*math.pi**2
 
+     @property
+     def diameter(self):
+          return self._diameter
+     
+     @diameter.setter
+     def diameter(self, radius):
+          self._diameter = radius*2
 
-     def set_radius(self, radius):
+     @property
+     def radius(self):
+          if not self._radius:
+               raise ValueError("Input a radius first")
+          return self._radius
+     
+     @radius.setter
+     def radius(self, radius):
           try:
                if radius <= 0:
                     raise ValueError
@@ -16,60 +33,54 @@ class Circle:
                raise TypeError
           self._radius = radius
      
-     def get_radius(self):
-          return self._radius
-     
-     def set_diameter(self):
-          self._diameter = self._radius*2
-
-     def get_diameter(self):
-          return self._diameter
-     
-     def set_area(self):
-          self._area = self._radius*math.pi**2
-
-     def get_area(self):
+     @property
+     def area(self):
           return self._area
+     
+     @area.setter
+     def area(self, radius):
+          self._area = radius*math.pi**2
 
-     def set_perimeter(self):
-          self._perimeter = 2*math.pi*self._radius
-
-     def get_perimeter(self):
+     @property
+     def perimeter(self):
           return self._perimeter
 
+     @perimeter.setter
+     def perimeter(self, radius):
+          self._perimeter = 2*math.pi*radius
+
      def display_radius(self):
-          print(self.get_radius())
+          print(self.radius)
 
      def display_diameter(self):
-          print(self.get_diameter())
+          print(self._diameter)
 
      def display_area(self):
-          print(self.get_area())
+          print(self._area)
 
      def display_perimeter(self):
-          print(self.get_perimeter())
+          print(self._perimeter)
 
 
 def main():
-     display_menu()
-     choice = int(input("Enter choice 1-6 "))
-     if choice == 1:
-          rad = int(input("Enter the radius"))
-          circle.set_radius(rad)
-          circle.set_area()
-          circle.set_diameter()
-          circle.set_perimeter()
-     elif choice == 2:
-          circle.display_radius()
-     elif choice == 3:
-          circle.display_diameter()
-     elif choice == 4:
-          circle.display_area()
-     elif choice == 5:
-          circle.display_perimeter()
-     else:
-          exit()
-          
-circle = Circle()
-while __name__ == "__main__":
+     exit = False
+     while not exit:
+          display_menu()
+          choice = int(input("Enter choice 1-6 "))
+          if choice == 1:
+               rad = int(input("Enter the radius "))
+               circle = Circle(rad)
+          elif choice == 2:
+               circle.display_radius()
+          elif choice == 3:
+               circle.display_diameter()
+          elif choice == 4:
+               circle.display_area()
+          elif choice == 5:
+               circle.display_perimeter()
+          else:
+               exit = True
+
+
+if __name__ == "__main__":
      main()
