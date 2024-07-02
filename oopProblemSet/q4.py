@@ -11,11 +11,14 @@ class Box:
           print(f"{self._width}x{self._length}x{self._height}")
 
 
+def main():
+     width = int(input("enter width"))
+     length = int(input("enter length"))
+     height = int(input("enter height"))
 
-width = int(input("enter width"))
-length = int(input("enter length"))
-height = int(input("enter height"))
+     box = Box(width, length, height)
+     box.display_volume()
+     box.display_dimensions()
 
-box = Box(width, length, height)
-box.display_volume()
-box.display_dimensions()
+if __name__ == "__main__":
+     main()

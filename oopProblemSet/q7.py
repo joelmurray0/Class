@@ -1,6 +1,6 @@
 class Cube:
      def __init__(self, edge):
-          self.edge = edge
+          self._edge = edge
      
      @property
      def edge(self):
@@ -21,6 +21,10 @@ class Cube:
      def display_total_surface(self):
           return 6*self.display_one_surface()
      
-edge = int(input("Enter the length of the edge."))
-cube = Cube(edge)
-print(cube.display_volume(), cube.display_one_surface(), cube.display_total_surface())
+def main():
+     edge = int(input("Enter the length of the edge. "))
+     cube = Cube(edge)
+     print(f"Volume: {cube.display_volume()} \nOne side area: {cube.display_one_surface()} \nSurface Area: {cube.display_total_surface()}")
+
+if __name__ == "__main__":
+     main()
