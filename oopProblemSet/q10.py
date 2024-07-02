@@ -35,8 +35,6 @@ class EncryptDecrypt:
           for i in ciphertext:
                new_letter = ""
                if ord(i) - self._encr_decr_key < ord("a"):
-                    print(ord(i))
-                    print(ord("z") - (ord("a") - ord(i) + self._encr_decr_key))
                     new_letter = chr(ord("z") - (ord("a") - ord(i) + self._encr_decr_key) + 1)
                else:
                     new_letter = chr(ord(i) - self._encr_decr_key)

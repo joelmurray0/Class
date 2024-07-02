@@ -6,17 +6,6 @@ def display_menu():
 class Circle:
      def __init__(self, radius):
           self._radius = radius
-          self._diameter = radius*2
-          self._perimeter = radius*2*math.pi
-          self._area = radius*math.pi**2
-
-     @property
-     def diameter(self):
-          return self._diameter
-     
-     @diameter.setter
-     def diameter(self, radius):
-          self._diameter = radius*2
 
      @property
      def radius(self):
@@ -32,34 +21,15 @@ class Circle:
           except:
                raise TypeError
           self._radius = radius
-     
-     @property
-     def area(self):
-          return self._area
-     
-     @area.setter
-     def area(self, radius):
-          self._area = radius*math.pi**2
 
-     @property
-     def perimeter(self):
-          return self._perimeter
+     def get_diameter(self):
+          print(self._radius*2)
 
-     @perimeter.setter
-     def perimeter(self, radius):
-          self._perimeter = 2*math.pi*radius
+     def get_area(self):
+          print(self._radius**2*math.pi)
 
-     def display_radius(self):
-          print(self.radius)
-
-     def display_diameter(self):
-          print(self._diameter)
-
-     def display_area(self):
-          print(self._area)
-
-     def display_perimeter(self):
-          print(self._perimeter)
+     def get_perimeter(self):
+          print(math.pi*2*self._radius)
 
 
 def main():
@@ -71,13 +41,13 @@ def main():
                rad = int(input("Enter the radius "))
                circle = Circle(rad)
           elif choice == 2:
-               circle.display_radius()
+               print(circle._radius)
           elif choice == 3:
-               circle.display_diameter()
+               circle.get_diameter()
           elif choice == 4:
-               circle.display_area()
+               circle.get_area()
           elif choice == 5:
-               circle.display_perimeter()
+               circle.get_perimeter()
           else:
                exit = True
 
