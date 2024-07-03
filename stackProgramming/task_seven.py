@@ -6,14 +6,6 @@ class Stack():
      def push(self, content):
           self.list.append(content)
           self._size += 1
-          if self.get_size() == 1:
-               self.min = self.list[0]
-          else:
-               if content < self.min:
-                    self.min = content
-     
-     def get_min(self):
-          return self.min
           
      def pop(self):
           output = self.list[-1]
@@ -21,7 +13,7 @@ class Stack():
           self._size -= 1
           return output
      
-     def top(self):
+     def peek(self):
           return self.list[-1]
      
      def get_size(self):
@@ -31,4 +23,9 @@ class Stack():
           output = False
           if self.get_size() == 0:
                output = True
-          return output
+
+def sort_stack(stack1, stack2):
+     temp1 = stack1.peek()
+     temp2 = stack2.peek()
+     if temp1 < temp2:
+          

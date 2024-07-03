@@ -1,5 +1,3 @@
-def function_name(*args, **kwargs):
-     # code here
-     return None
-
-function_name()
+for _ in range(0):
+     print("hello")
+print("hi")
