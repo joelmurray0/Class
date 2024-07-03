@@ -1,10 +1,43 @@
-.navbar {
+.CS {
      display: flex;
      flex-direction: row;
      align-items: center;
-}
-
-.navbar a {
+   }
+   
+   .link {
      position: relative;
+   }
+   
+   .CS p {
      margin-left: 10px;
-}
+   }
+   
+   nav {
+     width: 60%;
+     margin: 0 auto;
+   }
+   
+   a {
+     width: max-content;
+     margin: 0 0.5rem;
+   }
+   
+   a:hover {
+     color: blue;
+   }
+   
+   a::after {
+     content: "";
+     display: block;
+     height: 2px;
+     background: red;
+     transition: width 0.3s;
+     width: 0;
+     position: absolute;
+     bottom: -5px;
+     left: 0;
+   }
+   a:hover::after {
+     width: 100%;
+   }
+   
