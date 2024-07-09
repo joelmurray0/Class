@@ -1,43 +1,52 @@
-.CS {
+.lexend-title-font {
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  color: #FFFAFF;
+}
+
+body {
+     background-color: #1E1B18;
+}
+
+.navbar {
      display: flex;
      flex-direction: row;
      align-items: center;
    }
-   
-   .link {
-     position: relative;
+
+.navbar a:link { 
+     text-decoration: none; 
+   } 
+.navbar a:visited { 
+     text-decoration: none; 
+   }
+
+.navbar a:hover {
+     color: #7F7B82;
    }
    
-   .CS p {
-     margin-left: 10px;
-   }
-   
-   nav {
-     width: 60%;
-     margin: 0 auto;
-   }
-   
-   a {
-     width: max-content;
-     margin: 0 0.5rem;
-   }
-   
-   a:hover {
-     color: blue;
-   }
-   
-   a::after {
+.navbar a::after {
      content: "";
      display: block;
      height: 2px;
-     background: red;
+     background: #87F6FF;
      transition: width 0.3s;
      width: 0;
      position: absolute;
      bottom: -5px;
      left: 0;
    }
-   a:hover::after {
+
+.navbar a:hover::after {
      width: 100%;
    }
+
+.navbar a {
+     margin-left: 20px;
+     position: relative;
+   }
+   
+
    
